@@ -1,0 +1,98 @@
+<!doctype HTML>
+<html>
+<script src="./js/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+<script>
+    AFRAME.registerComponent('registerevents', {
+        init: function () {
+            var marker = this.el;
+            marker.addEventListener('markerFound', function() {
+                var markerId = marker.id;
+                console.log('! markerFound', markerId);
+                // do additional things you want to do
+            });
+            marker.addEventListener('markerLost', function() {
+                var markerId = marker.id;
+                console.log('! markerLost', markerId);
+                // do additional things you want to do
+            });
+        }
+    });
+</script>
+
+  <a-scene stats embedded arjs='debugUIEnabled: false;' vr-mode-ui="enabled: false">
+          <a-assets>
+           
+          </a-assets>
+          
+          <a-marker id="MJV" registerevents preset='custom' type='pattern' url='./markers/mjv.patt'>
+            <a-entity obj-model='obj: url(./3D/ProtoLab/bemvindos.obj);' material="color:rgb(15,15,15)" scale='0.005 0.005 0.005' position='0 0 0' rotation='0 0 0'></a-entity>
+            <a-plane src="#blank" position="-0.077 -0.023 0" scale="3.5 2 1" material="shader:standard;color:white;" rotation="-90 0 0"></a-plane>
+         </a-marker>
+
+          <a-marker id="1" registerevents preset='custom' type='pattern' url='./markers/1.patt'>
+            <a-entity id="titulo" position="0 0.110 -0.700">
+                <a-box material="color:white" scale='2 0.228 0.3' position='0 0 0' rotation='0 0 0'> </a-box>
+                <a-entity obj-model='obj: url(./3D/ProtoLab/beatrice_nome.obj);' material="color:rgb(15,15,15)" scale='0.030  0.030 0.030' position='0.017 -0.027 0.846' rotation='0 0 0'></a-entity>
+            </a-entity>
+            <a-entity id="modelo" position="-0.463 0.298 0.220">
+                <a-box material="color:rgb(0,0,12);transparent:true;opacity:0.09" scale='1 0.600 1'></a-box>
+                <a-entity obj-model='obj: url(./3D/beatrice.obj);' material="color:#aaaaff;" scale='0.1 0.1 0.1' position='0 -0.291 0' rotation='-90 0 180'></a-entity>
+            </a-entity>
+            <a-entity  obj-model='obj: url(./3D/ProtoLab/beatrice_desc.obj);' material="color:rgb(15,15,15)" scale='0.02 0.02 0.02' position='0.16 0 0' rotation='0 0 0'></a-entity>
+           
+            <a-plane position="0 0 0" scale="2.5 2 1" material="shader:standard;color:white;" rotation="-90 0 0"></a-plane>
+         </a-marker>
+
+          <a-marker id="2" registerevents preset='custom' type='pattern' url='./markers/2.patt'>
+            <a-entity id="titulo" position="0 0.110 -0.700">
+                <a-box material="color:white" scale='2 0.228 0.3' position='0 0 0' rotation='0 0 0'> </a-box>
+                <a-entity obj-model='obj: url(./3D/ProtoLab/paulo_nome.obj);' material="color:rgb(15,15,15)" scale='0.030  0.030 0.030' position='0.017 -0.027 0.846' rotation='0 0 0'></a-entity>
+            </a-entity>
+            <a-entity id="modelo" position="-0.463 0.298 0.220">
+                <a-box material="color:rgb(0,0,12);transparent:true;opacity:0.09" scale='1 0.600 1'></a-box>
+                <a-entity obj-model='obj: url(./3D/paulo.obj);' material="color:pink;" scale='0.15 0.15 0.15' position='0 -0.079 0' rotation='-90 0 180'></a-entity>
+            </a-entity>
+            <a-entity  obj-model='obj: url(./3D/ProtoLab/paulo_desc.obj);' material="color:rgb(15,15,15)" scale='0.02 0.02 0.02' position='0.16 0 0' rotation='0 0 0'></a-entity>
+           
+            <a-plane position="0 0 0" scale="2.5 2 1" material="shader:standard;color:white;" rotation="-90 0 0"></a-plane>
+         </a-marker>
+
+         <a-marker id="3" registerevents preset='custom' type='pattern' url='./markers/3.patt'>
+          <a-entity id="titulo" position="0 0.110 -0.700">
+              <a-box material="color:white" scale='2 0.228 0.3' position='0 0 0' rotation='0 0 0'> </a-box>
+              <a-entity obj-model='obj: url(./3D/ProtoLab/pedro_nome.obj);' material="color:rgb(15,15,15)" scale='0.030  0.030 0.030' position='0.017 -0.027 0.846' rotation='0 0 0'></a-entity>
+          </a-entity>
+          <a-entity id="modelo" position="-0.463 0.298 0.220">
+              <a-box material="color:rgb(0,0,12);transparent:true;opacity:0.09" scale='1 0.600 1'></a-box>
+              <a-entity obj-model='obj: url(./3D/pedro.obj);' material="color:#fcce78;" scale='0.12 0.12 0.12' position='-0.009 -0.244 0' rotation='-90 0 180'></a-entity>
+          </a-entity>
+          <a-entity  obj-model='obj: url(./3D/ProtoLab/pedro_desc.obj);' material="color:rgb(15,15,15)" scale='0.02 0.02 0.02' position='0.16 0 0' rotation='0 0 0'></a-entity>
+         
+          <a-plane position="0 0 0" scale="2.5 2 1" material="shader:standard;color:white;" rotation="-90 0 0"></a-plane>
+       </a-marker>
+
+       <a-marker id="4" registerevents preset='custom' type='pattern' url='./markers/4.patt'>
+        <a-entity id="titulo" position="0 0.110 -0.700">
+            <a-box material="color:white" scale='2 0.228 0.3' position='0 0 0' rotation='0 0 0'> </a-box>
+            <a-entity obj-model='obj: url(./3D/ProtoLab/rodolpho_nome.obj);' material="color:rgb(15,15,15)" scale='0.027  0.027 0.027' position='-0.008 -0.027 0.757' rotation='0 0 0'></a-entity>
+        </a-entity>
+        <a-entity id="modelo" position="-0.463 0.298 0.220">
+            <a-box material="color:rgb(0,0,12);transparent:true;opacity:0.09" scale='1 0.600 1'></a-box>
+            <a-entity obj-model='obj: url(./3D/rodolpho.obj);' material="color:#77d16d;" scale='0.12 0.12 0.12' position='0.085 -0.244 0' rotation='-73.478 -92.462 -88.060'></a-entity>
+        </a-entity>
+        <a-entity  obj-model='obj: url(./3D/ProtoLab/rodolpho_desc.obj);' material="color:rgb(15,15,15)" scale='0.02 0.02 0.02' position='0.16 0 0' rotation='0 0 0'></a-entity>
+       
+        <a-plane position="0 0 0" scale="2.5 2 1" material="shader:standard;color:white;" rotation="-90 0 0"></a-plane>
+     </a-marker>
+
+         
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
